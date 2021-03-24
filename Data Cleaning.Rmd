@@ -3,3 +3,16 @@
 ###Video UID: 357b79c7-9ce6-42a8-81f1-2a732dc483c5
 ###Video Data: 2012-02-06
 
+Load tidyverse library to use the tidyverse package.
+
+```{r}
+library(tidyverse)
+```
+
+Import csv file of practice video coding data from location on machine. Data frame assigned to a variable called 'practice'.
+
+``` {r}
+practice <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/R Projects/Zhangzhuoran Dai/Training Data/practice footage.csv')
+glimpse(practice)
+```
+
