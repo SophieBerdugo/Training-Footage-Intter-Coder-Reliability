@@ -1,7 +1,7 @@
-#Data Cleaning for Practice Inter-Coder Reliability Video Coding
-##Sophie Berdugo and Zhangzhuoran Dai 
-###Video UID: 357b79c7-9ce6-42a8-81f1-2a732dc483c5
-###Video Data: 2012-02-06
+# Data Cleaning for Practice Inter-Coder Reliability Video Coding
+## Sophie Berdugo and Zhangzhuoran Dai 
+### Video UID: 357b79c7-9ce6-42a8-81f1-2a732dc483c5
+### Video Data: 2012-02-06
 
 **Import Data**
 Load tidyverse library to use the tidyverse package.
