@@ -3,9 +3,10 @@
 ###Video UID: 357b79c7-9ce6-42a8-81f1-2a732dc483c5
 ###Video Data: 2012-02-06
 
+**Import Data**
 Load tidyverse library to use the tidyverse package.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 ```
 
@@ -13,6 +14,20 @@ Import csv file of practice video coding data from location on machine. Data fra
 
 ``` {r}
 practice <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/R Projects/Zhangzhuoran Dai/Training Data/practice footage.csv')
+glimpse(practice)
+```
+
+**Change Column Names**
+
+Change the column names in the tibble. 
+1. Create the vector of names 
+2. Add the vector 'names' to the tibble and reimport the csv file with the col_names changed
+3. Remove the original column names by using the skip function
+
+``` {r message=FALSE, warning=FALSE}
+names <- c("ObservationID", "ObservationDate", "Description", "MediaFile", "TotalLength", "FPS", "Subject", "Behaviour", "BehaviouralCategory", "Modifiers", "BehaviourType", "Start", "Stop", "Duration", "CommentStart", "CommentStop")
+practice <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/R Projects/Zhangzhuoran Dai/Training Data/practice footage.csv', col_names = names)
+practice <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/R Projects/Zhangzhuoran Dai/Training Data/practice footage.csv', col_names = names, skip = 1)
 glimpse(practice)
 ```
 
