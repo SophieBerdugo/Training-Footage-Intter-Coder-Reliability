@@ -31,3 +31,10 @@ practice <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Re
 glimpse(practice)
 ```
 
+**Remove columns**
+Use dplyr to remove multiple columns which are not included in the analysis.
+
+``` {r message=FALSE, warning=FALSE}
+select(practice, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategory, CommentStart, CommentStop))
+glimpse(practice)
+```
