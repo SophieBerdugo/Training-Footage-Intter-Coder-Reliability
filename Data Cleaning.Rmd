@@ -36,5 +36,8 @@ Use dplyr to remove multiple columns which are not included in the analysis.
 
 ``` {r message=FALSE, warning=FALSE}
 select(practice, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategory, CommentStart, CommentStop))
+practice <- select(practice, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategory, CommentStart, CommentStop))
 glimpse(practice)
 ```
+
+**
