@@ -9,12 +9,11 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Video UID: f1acdcbb-c0d2-4a5d-98e4-e6d5986f15e1
-## Video Observation Date: 2012-02-02 
-## Video Observation Time: 15:58:34
+### Video UID: f1acdcbb-c0d2-4a5d-98e4-e6d5986f15e1
+### Video Observation Date: 2012-02-02 | Video Observation Time: 15:58:34
 
-## Rater 1: Sophie Berdugo
-## Rater 2: Zhangzhuoran Dai
+**Rater 1: Sophie Berdugo**
+**Rater 2: Zhangzhuoran Dai**
 
 Load the `irr` package to retrieve packages relating to inter-rater reliability.
 ```{r message=FALSE, warning=FALSE}
@@ -185,4 +184,3 @@ Calculate Cohen's kappa for two coders.
 kappa2(model_intolerance[,c(1,2)], "unweighted")
 ```
 In this case, there is 100% concordance between the two raters so kappa = NaN because the formula is 0/0. 
-
