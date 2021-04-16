@@ -150,7 +150,7 @@ The variable *model tolerance* is a record of whether the focal subject permitte
 1. *None* - No learner attempted to scrounge the kernel, interact with the model or the model’s tools or be proximate to the model during the nut-cracking bout.
 2. *Scrounge* -	The focal chimpanzee permitted the learner to take the extracted kernel to eat themselves.
 3. *Tool interaction* -	The focal chimpanzee permitted the learner to touch either one or both stones in the tool composite during the nut-cracking bout.
-4. *Model interaction* -	The focal chimpanzee permitted the learner to interact with them (for example, touching arm or body of model, climbing on model) during their nut-cracking bout.
+4. *Model interaction* - The focal chimpanzee permitted the learner to interact with them (for example, touching arm or body of model, climbing on model) during their nut-cracking bout.
 5. *Tool re-use* - The focal chimpanzee permitted the learner to re-use one or both of their tool composite tools after their nut-cracking bout. 
 6. *Proximity* -	The focal chimpanzee permitted the learner to be ≤ 1 metre (m) away from them during the bout. In this case, the learner was not interacting with the focal subject, but was merely close to the focal subject and watching the nut-cracking bout.
 
