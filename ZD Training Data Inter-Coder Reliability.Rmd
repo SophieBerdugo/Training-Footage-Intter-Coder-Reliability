@@ -42,16 +42,16 @@ The inter-rater reliability analysis utilised depends on the level of measuremen
 | Variable                | Level of Measurement | Approach                           |
 | :---------------------- | :------------------- | :--------------------------------- |
 | Bout outcome            | Nominal              | Cohen's kappa                      |
-| Strikes per nut         | Ratio                | Intraclass correlation coefficient |
-| Displacement rate       | Ratio                | Intraclass correlation coefficient |
-| Tool switch rate        | Ratio                | Intraclass correlation coefficient |
-| Bout duration           | Ratio                | Intraclass correlation coefficient |
-| Average strike duration | Ratio                | Intraclass correlation coefficient |
 | Learner                 | Nominal              | Cohen's kappa                      |
 | Maternal model          | Nominal              | Cohen's kappa                      |
 | Learner name            | Nominal              | Cohen's kappa                      |
 | Model tolerance         | Nominal              | Cohen's kappa                      |
 | Model intolerance       | Nominal              | Cohen's kappa                      |
+| Strikes per nut         | Ratio                | Intraclass correlation coefficient |
+| Displacement rate       | Ratio                | Intraclass correlation coefficient |
+| Tool switch rate        | Ratio                | Intraclass correlation coefficient |
+| Bout duration           | Ratio                | Intraclass correlation coefficient |
+| Average strike duration | Ratio                | Intraclass correlation coefficient |
 
 ### Bout outcome
 
