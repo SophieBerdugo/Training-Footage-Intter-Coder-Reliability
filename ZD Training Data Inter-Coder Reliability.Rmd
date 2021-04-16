@@ -22,3 +22,34 @@ install.packages("irr")
 library(irr)
 ```
 
+# Variables
+This analysis involves establishing the levels of inter-rater reliability for various variables relating to adult nut-cracking efficiency and model investment. These variables are:
+
+* Bout outcome
+* Strikes per nut
+* Displacement rate
+* Tool switch rate
+* Bout duration
+* Average strike duration
+* Learner
+* Maternal model
+* Learner name
+* Model tolerance
+* Model intolerance
+
+The inter-rater reliability analysis utilised depends on the level of measurement of each variable under investigation. The levels of measurement and corresponding test of inter rater reliability for each variable can be found in Table 1, below:
+
+*Table 1*
+| Variable                | Level of Measurement | Approach                           |
+| :---------------------- | :------------------- | :--------------------------------- |
+| Bout outcome            | Nominal              | Cohen's kappa                      |
+| Strikes per nut         | Ratio                | Intraclass correlation coefficient |
+| Displacement rate       | Ratio                | Intraclass correlation coefficient |
+| Tool switch rate        | Ratio                | Intraclass correlation coefficient |
+| Bout duration           | Ratio                | Intraclass correlation coefficient |
+| Average strike duration | Ratio                | Intraclass correlation coefficient |
+| Learner                 | Nominal              | Cohen's kappa                      |
+| Maternal model          | Nominal              | Cohen's kappa                      |
+| Learner name            | Nominal              | Cohen's kappa                      |
+| Model tolerance         | Nominal              | Cohen's kappa                      |
+| Model intolerance       | Nominal              | Cohen's kappa                      |
