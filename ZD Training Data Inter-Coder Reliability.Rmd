@@ -53,3 +53,29 @@ The inter-rater reliability analysis utilised depends on the level of measuremen
 | Learner name            | Nominal              | Cohen's kappa                      |
 | Model tolerance         | Nominal              | Cohen's kappa                      |
 | Model intolerance       | Nominal              | Cohen's kappa                      |
+
+### Bout outcome
+
+The three potential bout outcomes are:
+
+1. *Successful* - The nut is cracked open using the hammer and anvil composite and the full kernel is retrieved and eaten by an individual (not necessarily by focal subject, if kernel is scrounged). 
+2. *Smash* - The nut is cracked open using hammer and anvil, but the kernel is smashed into multiple pieces and each piece is eaten separately
+3. *Failed* - A different nut is placed on the anvil following displacement of the original nut; or, the nut is not retrieved or not eaten by any individual. 
+
+This data is nominal so an unweighted Cohen's kappa will be used to establish the concordance between two independent observers. 
+rater1 = SB, rater2 = ZD
+
+Import data frame as csv file.
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+bout_outcome <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Zhangzhuoran Dai/Training Data/Individual variable data/Bout outcome.csv")
+bout_outcome
+```
+Calculate Cohen's kappa for two coders.
+?kappa2
+```{r}
+kappa2(bout_outcome[,c(1,2)], "unweighted")
+```
+
+
+
