@@ -172,6 +172,7 @@ kappa2(model_tolerance[,c(1,2)], "unweighted")
 ### Model intolerance
 
 The variable *model intolerance* is a record of whether the focal subject expressed intolerance toward a learner. The possible behaviours are:
+
 1. *None* -	The focal subject did not express intolerance toward a learner during the bout.
 2. *Physical* -	The focal subject physically rejected a learner’s attempts to scrounge, interact with the model or the tools, or be proximate whilst they were nut-cracking (for example, shoving, hitting, or chasing the learner).
 3. *Vocal* -	The focal subject vocally rejected a learner’s attempts to scrounge, interact with the model or the tools, or be proximate whilst they are nut-cracking (for example, grunting, barking or screaming). Barking sounds like ‘waa’, ‘waaoo’ or ‘aaoo’, and are shorter than screams (Crockford & Boesch, 2003, p. 117).
