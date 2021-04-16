@@ -15,3 +15,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Rater 1: Sophie Berdugo
 ## Rater 2: Zhangzhuoran Dai
+
+Install and then load the `irr` package to retrieve packages relating to inter-rater reliability.
+```{r message=FALSE, warning=FALSE}
+install.packages("irr")
+library(irr)
+```
+
