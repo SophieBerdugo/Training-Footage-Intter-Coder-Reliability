@@ -16,9 +16,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Rater 1: Sophie Berdugo
 ## Rater 2: Zhangzhuoran Dai
 
-Install and then load the `irr` package to retrieve packages relating to inter-rater reliability.
+Load the `irr` package to retrieve packages relating to inter-rater reliability.
 ```{r message=FALSE, warning=FALSE}
-install.packages("irr")
 library(irr)
 ```
 
@@ -40,6 +39,7 @@ This analysis involves establishing the levels of inter-rater reliability for va
 The inter-rater reliability analysis utilised depends on the level of measurement of each variable under investigation. The levels of measurement and corresponding test of inter rater reliability for each variable can be found in Table 1, below:
 
 *Table 1*
+
 | Variable                | Level of Measurement | Approach                           |
 | :---------------------- | :------------------- | :--------------------------------- |
 | Bout outcome            | Nominal              | Cohen's kappa                      |
