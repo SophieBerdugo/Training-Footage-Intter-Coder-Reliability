@@ -59,7 +59,7 @@ The inter-rater reliability analysis utilised depends on the level of measuremen
 The three potential bout outcomes are:
 
 1. *Successful* - The nut is cracked open using the hammer and anvil composite and the full kernel is retrieved and eaten by an individual (not necessarily by focal subject, if kernel is scrounged). 
-2. *Smash* - The nut is cracked open using hammer and anvil, but the kernel is smashed into multiple pieces and each piece is eaten separately
+2. *Smash* - The nut is cracked open using hammer and anvil, but the kernel is smashed into multiple pieces and each piece is eaten separately.
 3. *Failed* - A different nut is placed on the anvil following displacement of the original nut; or, the nut is not retrieved or not eaten by any individual. 
 
 This data is nominal so an unweighted Cohen's kappa will be used to establish the concordance between two independent observers. 
@@ -77,5 +77,25 @@ Calculate Cohen's kappa for two coders.
 kappa2(bout_outcome[,c(1,2)], "unweighted")
 ```
 
+### Learner
+
+The Learner variable describes whether or not there was a conspecific who was present during the focal individual's nut-cracking bout. The three options for coding were:
+
+1. *Watching* - There is a learner watching the focal subject during the nut-cracking bout, whereby the learner’s face is oriented toward the model’s hand or arm during the bout.
+2. *Interacting* - There is a learner present, and they are interacting with the focal subject (for example, touching arm or body of model, climbing on model).
+3. *Solo* - There is no learner with the focal individual during their nut-cracking bout.
+
+This data is nominal so an unweighted Cohen's kappa will be used to establish the concordance between two independent observers. 
+rater1 = SB, rater2 = ZD
 
 
+Import data frame as csv file.
+```{r message=FALSE, warning=FALSE}
+learner <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Zhangzhuoran Dai/Training Data/Individual variable data/Learner.csv")
+learner
+```
+
+Calculate Cohen's kappa for two coders.
+```{r}
+kappa2(learner[,c(1,2)], "unweighted")
+```
