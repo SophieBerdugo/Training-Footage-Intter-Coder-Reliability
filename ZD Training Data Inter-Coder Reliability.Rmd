@@ -121,3 +121,20 @@ Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(maternal_model[,c(1,2)], "unweighted")
 ```
+
+### Learner name
+
+The *learner name* variable records the name of the learner if one is present in the bout. 'The coding options for the variable are the names 'None' is recorded if no learner was present.
+
+This data is nominal so an unweighted Cohen's kappa will be used to establish the concordance between two independent observers. 
+rater1 = SB, rater2 = ZD
+
+Import data frame from csv file
+```{r message=FALSE, warning=FALSE}
+learner_name <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Zhangzhuoran Dai/Training Data/Individual variable data/Learner name.csv")
+learner_name
+```
+Calculate Cohen's kappa for two coders.
+```{r}
+kappa2(learner_name[,c(1,2)], "unweighted")
+```
