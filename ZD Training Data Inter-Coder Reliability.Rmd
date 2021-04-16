@@ -1,0 +1,17 @@
+---
+title: "ZD Training Footage Inter-Coder Reliability"
+author: "Sophie Berdugo"
+date: "16/04/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Video UID: f1acdcbb-c0d2-4a5d-98e4-e6d5986f15e1
+## Video Observation Date: 2012-02-02 
+## Video Observation Time: 15:58:34
+
+## Rater 1: Sophie Berdugo
+## Rater 2: Zhangzhuoran Dai
