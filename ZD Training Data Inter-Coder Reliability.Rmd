@@ -79,7 +79,7 @@ kappa2(bout_outcome[,c(1,2)], "unweighted")
 
 ### Learner
 
-The Learner variable describes whether or not there was a conspecific who was present during the focal individual's nut-cracking bout. The three options for coding were:
+The *learner* variable describes whether or not there was a conspecific who was present during the focal individual's nut-cracking bout. The three options for coding were:
 
 1. *Watching* - There is a learner watching the focal subject during the nut-cracking bout, whereby the learner’s face is oriented toward the model’s hand or arm during the bout.
 2. *Interacting* - There is a learner present, and they are interacting with the focal subject (for example, touching arm or body of model, climbing on model).
@@ -98,4 +98,26 @@ learner
 Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(learner[,c(1,2)], "unweighted")
+```
+
+### Maternal model
+
+The *maternal model* variable describes whether the model is the learner's mother or not. The three options for coding are:
+
+1. *Yes*
+2. *No*
+3. *None* - recorded if no learner was present
+
+This data is nominal so an unweighted Cohen's kappa will be used to establish the concordance between two independent observers. 
+rater1 = SB, rater2 = ZD
+
+Import data frame from csv file
+```{r message=FALSE, warning=FALSE}
+maternal_model <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Zhangzhuoran Dai/Training Data/Individual variable data/Maternal model.csv")
+maternal_model
+```
+
+Calculate Cohen's kappa for two coders.
+```{r}
+kappa2(maternal_model[,c(1,2)], "unweighted")
 ```
