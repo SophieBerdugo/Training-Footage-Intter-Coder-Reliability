@@ -143,7 +143,7 @@ kappa2(learner_name[,c(1,2)], "unweighted")
 
 The variable *model tolerance* is a record of whether the focal subject permitted any of the following learner behaviours during their nut-cracking bout:
 
-1. *NA* - No learner attempted to scrounge the kernel, interact with the model or the model’s tools or be proximate to the model during the nut-cracking bout.
+1. *None* - No learner attempted to scrounge the kernel, interact with the model or the model’s tools or be proximate to the model during the nut-cracking bout.
 2. *Scrounge* -	The focal chimpanzee permitted the learner to take the extracted kernel to eat themselves.
 3. *Tool interaction* -	The focal chimpanzee permitted the learner to touch either one or both stones in the tool composite during the nut-cracking bout.
 4. *Model interaction* -	The focal chimpanzee permitted the learner to interact with them (for example, touching arm or body of model, climbing on model) during their nut-cracking bout.
@@ -163,3 +163,26 @@ Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(model_tolerance[,c(1,2)], "unweighted")
 ```
+
+### Model intolerance
+
+The variable *model intolerance* is a record of whether the focal subject expressed intolerance toward a learner. The possible behaviours are:
+1. *None* -	The focal subject did not express intolerance toward a learner during the bout.
+2. *Physical* -	The focal subject physically rejected a learner’s attempts to scrounge, interact with the model or the tools, or be proximate whilst they were nut-cracking (for example, shoving, hitting, or chasing the learner).
+3. *Vocal* -	The focal subject vocally rejected a learner’s attempts to scrounge, interact with the model or the tools, or be proximate whilst they are nut-cracking (for example, grunting, barking or screaming). Barking sounds like ‘waa’, ‘waaoo’ or ‘aaoo’, and are shorter than screams (Crockford & Boesch, 2003, p. 117).
+
+This data is nominal so an unweighted Cohen's kappa will be used to establish the concordance between two independent observers. 
+rater1 = SB, rater2 = ZD
+
+Import data frame from csv file
+```{r message=FALSE, warning=FALSE}
+model_intolerance <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Zhangzhuoran Dai/Training Data/Individual variable data/Model intolerance.csv")
+model_intolerance
+```
+
+Calculate Cohen's kappa for two coders.
+```{r}
+kappa2(model_intolerance[,c(1,2)], "unweighted")
+```
+In this case, there is 100% concordance between the two raters so kappa = NaN because the formula is 0/0. 
+
