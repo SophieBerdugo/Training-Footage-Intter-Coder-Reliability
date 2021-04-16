@@ -76,6 +76,8 @@ Calculate Cohen's kappa for two coders.
 kappa2(bout_outcome[,c(1,2)], "unweighted")
 ```
 
+**The agreement between the two raters was substantial, κ = 0.73, and greater than would be expected by chance,** ***Z*** **= 5.81,** ***p*** **< .05**
+
 ### Learner
 
 The *learner* variable describes whether or not there was a conspecific who was present during the focal individual's nut-cracking bout. The three options for coding were:
@@ -98,6 +100,7 @@ Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(learner[,c(1,2)], "unweighted")
 ```
+**The agreement between the two raters was almost perfect, κ = 0.932, and greater than would be expected by chance,** ***Z*** **= 7.91,** ***p*** **< .05**
 
 ### Maternal model
 
@@ -120,6 +123,7 @@ Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(maternal_model[,c(1,2)], "unweighted")
 ```
+**The agreement between the two raters was almost perfect, κ = 0.93, and greater than would be expected by chance,** ***Z*** **= 6.85,** ***p*** **< .05**
 
 ### Learner name
 
@@ -137,6 +141,7 @@ Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(learner_name[,c(1,2)], "unweighted")
 ```
+**The agreement between the two raters was almost perfect, κ = 0.932, and greater than would be expected by chance,** ***Z*** **= 7.91,** ***p*** **< .05**
 
 ### Model tolerance
 
@@ -162,6 +167,7 @@ Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(model_tolerance[,c(1,2)], "unweighted")
 ```
+**The agreement between the two raters was almost perfect, κ = 0.856, and greater than would be expected by chance,** ***Z*** **= 7.06,** ***p*** **< .05**
 
 ### Model intolerance
 
@@ -183,4 +189,4 @@ Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(model_intolerance[,c(1,2)], "unweighted")
 ```
-In this case, there is 100% concordance between the two raters so kappa = NaN because the formula is 0/0. 
+**The agreement between the two raters was perfect, κ = 1. Kappa = NaN because the formula is 0/0**
