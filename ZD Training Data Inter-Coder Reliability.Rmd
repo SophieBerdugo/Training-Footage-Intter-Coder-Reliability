@@ -193,7 +193,7 @@ kappa2(model_intolerance[,c(1,2)], "unweighted")
 ```
 **The agreement between the two raters was perfect, κ = 1. Kappa = NaN because the formula is 0/0**
 
-###Number of strikes
+### Number of strikes
 
 The variable *number of strikes* records the number of strikes performed by the focal individual on a nut in the whole nut-cracking bout. This is an exact number that is manually inputted by the coder. 
 
