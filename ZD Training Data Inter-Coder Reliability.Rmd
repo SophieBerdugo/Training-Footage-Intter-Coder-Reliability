@@ -215,7 +215,7 @@ icc(number_of_strikes, #data frame
 ```
 **ICC estimates and their 95% confidence intervals were calculated using R (v. 4.0.3) based on a single rater (k = 2), absolute-agreement, two-way mixed effects model. The ICC score indicated excellent reliability.** 
 
-##Displacement rate
+### Displacement rate
 
 The variable *displacement rate* indicates the number of times a nut is hit off the anvil before the kernel is retrieved. This data is ratio, and so intraclass correlations (ICC) will be used to establish the reliability between two independent coders. In accordance with Koo & Li's (2016) guidelines on ICC model selection, the method used here will be a two-way, mixed-effects, single rater absolute agreement ICC.
 
@@ -236,7 +236,7 @@ icc(displacement_rate, #data frame
 ```
 **ICC estimates and their 95% confidence intervals were calculated using R (v. 4.0.3) based on a single rater (k = 2), absolute-agreement, two-way mixed effects model. The ICC score indicated moderate reliability.** 
 
-###Tool switch rate
+### Tool switch rate
 
 The *tool switch rate* variable indicates when the focal individual changes one or both parts of the tool composite to a new tool or surface. his data is ratio, and so intraclass correlations (ICC) will be used to establish the reliability between two independent coders. In accordance with Koo & Li's (2016) guidelines on ICC model selection, the method used here will be a two-way, mixed-effects, single rater absolute agreement ICC.
 
@@ -255,4 +255,4 @@ icc(tool_switch_rate, #data frame
     r0 = 0, #specification of the null hypothesis
     conf.level = 0.95) #confidence level
 ```
-**ICC estimates and their 95% confidence intervals were calculated using R (v. 4.0.3) based on a single rater (k = 2), absolute-agreement, two-way mixed effects model. The ICC score indicated moderate reliability.** 
+**ICC estimates and their 95% confidence intervals were calculated using R (v. 4.0.3) based on a single rater (k = 2), absolute-agreement, two-way mixed effects model. The ICC score indicated perfect reliability.** 
