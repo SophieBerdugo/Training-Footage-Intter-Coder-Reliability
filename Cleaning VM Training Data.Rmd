@@ -44,9 +44,20 @@ training <- select(training, -c(Description, MediaFile, TotalLength, FPS, Behavi
 glimpse(training)
 ```
 
-Separate out the ObservationDate column
+**Separate out the ObservationDate column**
 
 ```{r, message=FALSE, warning=FALSE}
 separate(training, ObservationDate, c('ObservationDate', 'ObservationTime'), 11) #separate the ObservationDate column into two new columns, separating the data at position 11
 glimpse(training)
+```
+
+**Separate out the Modifiers column**
+
+Subset the Modifier Column
+
+```{r}
+filter(training, Behaviour == 'End Bout') #extract the rows that meet the logical criteria of being exactly equal to 'End Bout'
+end_bout <- filter(training, Behaviour == 'End Bout') #create a new variable for this subset of End Bout data
+separate(end_bout, Modifiers, c('CompleteBout', 'Strikes', 'Outcome', 'Learner', 'MaternalModel', 'LearnerName', 'ModelTolerance', 'ModelIntolerance')) #separate the Modifiers column in this end_bout data into new columns, separating the data at the place that R finds a non-alpha numerica character
+end_bout #print 
 ```
