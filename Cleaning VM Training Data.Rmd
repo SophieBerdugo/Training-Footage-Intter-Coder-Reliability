@@ -9,3 +9,5 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+### Video UID: 8cd3b20b-f527-4092-907c-0311c8f3cfa6
+### Video Data and Time: 2010-01-03 | 08:05:33
