@@ -35,3 +35,11 @@ training <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Re
 glimpse(training)
 ```
 
+**Remove columns**
+Use dplyr to remove multiple columns which are not included in the analysis.
+
+``` {r message=FALSE, warning=FALSE}
+select(training, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategory, BehaviourType, CommentStart, CommentStop))
+training <- select(training, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategory, BehaviourType, CommentStart, CommentStop))
+glimpse(training)
+```
