@@ -43,3 +43,10 @@ select(training, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategor
 training <- select(training, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategory, BehaviourType, CommentStart, CommentStop))
 glimpse(training)
 ```
+
+Separate out the ObservationDate column
+
+```{r, message=FALSE, warning=FALSE}
+separate(training, ObservationDate, c('ObservationDate', 'ObservationTime'), 11) #separate the ObservationDate column into two new columns, separating the data at position 11
+glimpse(training)
+```
