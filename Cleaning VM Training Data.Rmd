@@ -11,3 +11,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Video UID: 8cd3b20b-f527-4092-907c-0311c8f3cfa6
 ### Video Data and Time: 2010-01-03 | 08:05:33
+
+**Import Data**
+Load tidyverse library to use the tidyverse package.
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+**Import CSV file**
+Import csv file of training data from location on machine. Data frame assigned to a variable called 'training'.
+
+``` {r message=FALSE, warning=FALSE}
+training <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_training_data_updated.csv')
+training
+```
