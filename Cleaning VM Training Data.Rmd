@@ -61,3 +61,16 @@ end_bout <- filter(training, Behaviour == 'End Bout') #create a new variable for
 separate(end_bout, Modifiers, c('CompleteBout', 'Strikes', 'Outcome', 'Learner', 'MaternalModel', 'LearnerName', 'ModelTolerance', 'ModelIntolerance')) #separate the Modifiers column in this end_bout data into new columns, separating the data at the place that R finds a non-alpha numerica character
 end_bout #print 
 ```
+
+**Create a new column to number the bouts**
+
+```{r}
+j = 0 #create a new counting variable
+training$bout.nr = 0 #create a new empty column
+for(i in 1:nrow(training)){ #loop over all rows
+  if(training$Behaviour[i] == 'Start Bout'){ #if the row says 'Start Bout', the bout counter is updated by 1
+    j = j+1
+  }
+  training$bout.nr[i] = j #give the row the bout number
+}
+```
