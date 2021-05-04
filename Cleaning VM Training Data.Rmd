@@ -26,3 +26,12 @@ Import csv file of training data from location on machine. Data frame assigned t
 training <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_training_data_updated.csv')
 training
 ```
+**Change Column Names**
+
+``` {r message=FALSE, warning=FALSE}
+names <- c("ObservationID", "ObservationDate", "Description", "MediaFile", "TotalLength", "FPS", "Subject", "Behaviour", "BehaviouralCategory", "Modifiers", "BehaviourType", "Start", "Stop", "Duration", "CommentStart", "CommentStop") #Create the vector of names
+training <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_training_data_updated.csv', col_names = names) #Add the vector 'names' to the tibble and reimport the csv file with the col_names changed
+training <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_training_data_updated.csv', col_names = names, skip = 1) #Remove the original column names by using the skip function
+glimpse(training)
+```
+
