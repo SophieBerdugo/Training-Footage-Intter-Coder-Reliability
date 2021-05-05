@@ -22,7 +22,7 @@ library(tidyverse)
 ```
 
 **Import CSV file**
-Import csv file of training data from location on machine. Data frame assigned to a variable called 'training'.
+Import csv file of training data from location on machine. Data frame assigned to a variable called 'vm_tua'.
 
 ``` {r message=FALSE, warning=FALSE}
 vm_tua <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_training_tua.csv')
@@ -85,5 +85,87 @@ bout.info = lapply(unique(vm_tua$bout.nr), function(x){
   return(x.bout) #Puts out that data frame
 })
 bout.info = do.call(rbind, bout.info) #Turns the list for all the bouts into a data frame again
+```
+
+#### SB Tua
+
+**Import CSV file**
+Import csv file of training data from location on machine. Data frame assigned to a variable called 'sb_tua'.
+
+``` {r message=FALSE, warning=FALSE}
+sb_tua <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/SB_training_tua.csv')
+sb_tua
+```
+
+**Change Column Names**
+
+``` {r message=FALSE, warning=FALSE}
+sb_tua <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/SB_training_tua.csv', col_names = names) #Add the vector 'names' to the tibble and reimport the csv file with the col_names changed
+sb_tua <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/SB_training_tua.csv', col_names = names, skip = 1) #Remove the original column names by using the skip function
+glimpse(sb_tua)
+```
+
+**Remove columns**
+Use dplyr to remove multiple columns which are not included in the analysis.
+
+``` {r message=FALSE, warning=FALSE}
+select(sb_tua, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategory, BehaviourType, CommentStart, CommentStop))
+sb_tua <- select(sb_tua, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategory, BehaviourType, CommentStart, CommentStop))
+glimpse(sb_tua)
+```
+
+**Create a new column to number the bouts**
+
+```{r}
+k = 0 #create a new counting variable
+sb_tua$bout.nr = 0 #create a new empty column
+for(i in 1:nrow(sb_tua)){ #loop over all rows
+  if(sb_tua$Behaviour[i] == 'Start Bout'){ #if the row says 'Start Bout', the bout counter is updated by 1
+    k = k+1
+  }
+  sb_tua$bout.nr[i] = k #give the row the bout number
+}
+```
+
+**Get the Modifier information for each bout**
+
+```{r}
+sb_tua_bout_info = lapply(unique(sb_tua$bout.nr), function(y){
+  print(y)
+  set.data = subset(sb_tua, bout.nr == y) #select only the bout in question
+  sb_tua_bout_info = unlist(
+    strsplit(
+      set.data$Modifiers[set.data$Behaviour == 'End Bout'],
+      split = '|',
+      fixed = T)) #This takes apart the information in the End Bout Modifier
+  y.bout = data.frame(
+    bout.nr = y,
+    CompleteBout = bout.info[1], #Assign a name to each Modifier into a new column
+    Strikes = bout.info[2],
+    Outcome = bout.info[3],
+    Learner = bout.info[4],
+    MaternalModel = bout.info[5],
+    LearnerName = bout.info[6],
+    ModelTolerance = bout.info[7],
+    ModelIntolerance = bout.info[8]
+  )
+  return(y.bout) #Puts out that data frame
+})
+sb_tua_bout_info = do.call(rbind, sb_tua_bout_info) #Turns the list for all the bouts into a data frame again
+```
+
+Subset sb_tua_bout_info to just the first 27 rows
+
+```{r}
+slice(sb_tua_bout_info, 1:27) #select rows by position
+sb_tua_info <- slice(sb_tua_bout_info, 1:27) #create new data frame of subset
+sb_tua_info <- select(sb_tua_info, -c(bout.nr)) #remove bout.nr column
+sb_tua_info
+```
+
+Rename VM bout.info data frame
+
+```{r}
+vm_tua_info <- bout.info
 ```
 
