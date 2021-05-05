@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ### Video UID: 8cd3b20b-f527-4092-907c-0311c8f3cfa6
 ### Video Data and Time: 2010-01-03 | 08:05:33
 
-#### Tua
+#### VM Tua
 
 **Import Data**
 Load tidyverse library to use the tidyverse package.
@@ -32,6 +32,7 @@ vm_tua
 **Change Column Names**
 
 ``` {r message=FALSE, warning=FALSE}
+names <- c("ObservationID", "ObservationDate", "Description", "MediaFile", "TotalLength", "FPS", "Subject", "Behaviour", "BehaviouralCategory", "Modifiers", "BehaviourType", "Start", "Stop", "Duration", "CommentStart", "CommentStop") #Create the vector of names
 vm_tua <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_training_tua.csv', col_names = names) #Add the vector 'names' to the tibble and reimport the csv file with the col_names changed
 vm_tua <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_training_tua.csv', col_names = names, skip = 1) #Remove the original column names by using the skip function
 glimpse(vm_tua)
@@ -83,6 +84,6 @@ bout.info = lapply(unique(vm_tua$bout.nr), function(x){
   )
   return(x.bout) #Puts out that data frame
 })
-bout.info = do.call(rbind, bout.info) #Turns the list for all the bouts inot a data frame again
+bout.info = do.call(rbind, bout.info) #Turns the list for all the bouts into a data frame again
 ```
 
