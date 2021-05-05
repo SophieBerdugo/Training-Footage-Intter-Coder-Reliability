@@ -169,3 +169,26 @@ Rename VM bout.info data frame
 vm_tua_info <- bout.info
 ```
 
+#### Bout Outcome
+
+The three potential bout outcomes are:
+
+1. *Successful* - The nut is cracked open using the hammer and anvil composite and the full kernel is retrieved and eaten by an individual (not necessarily by focal subject, if kernel is scrounged). 
+2. *Smash* - The nut is cracked open using hammer and anvil, but the kernel is smashed into multiple pieces and each piece is eaten separately.
+3. *Failed* - A different nut is placed on the anvil following displacement of the original nut; or, the nut is not retrieved or not eaten by any individual. 
+
+This data is nominal so an unweighted Cohen's kappa will be used to establish the concordance between two independent observers. 
+rater1 = SB, rater2 = ZD
+
+**Combine the bout outcome columns for Tua data**
+```{r}
+sb_tua_outcome <- select(sb_tua_info, Outcome) #select the column for bout outcome from sb data frame
+vm_tua_outcome <- select(vm_tua_info, Outcome) #select the column for bout outcome from vm data frame
+tua_outcome <- bind_cols(sb_tua_outcome, vm_tua_outcome) #combine two columns to get tua bout outcome SB and VM side-by-side
+tua_outcome <- tua_outcome %>%
+  rename(
+    SB = Outcome...1,
+    VM = Outcome...2
+  ) #rename the two columns and override original data frame of tua_outcome to include renamed columns
+tua_outcome #print
+```
