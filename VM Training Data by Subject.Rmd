@@ -14,11 +14,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### VM Tua
 
-**Import Data**
-Load tidyverse library to use the tidyverse package.
+Load libraries for analysis
 
 ```{r message=FALSE, warning=FALSE}
-library(tidyverse)
+library(tidyverse) #Load tidyverse to use the tidyverse package
+library(irr) #Load the irr package to retrieve packages relating to inter-rater reliability.
 ```
 
 **Import CSV file**
@@ -169,7 +169,7 @@ Rename VM bout.info data frame
 vm_tua_info <- bout.info
 ```
 
-#### Bout Outcome
+#### Bout Outcome Inter-Coder Reliabiliy
 
 The three potential bout outcomes are:
 
@@ -192,3 +192,10 @@ tua_outcome <- tua_outcome %>%
   ) #rename the two columns and override original data frame of tua_outcome to include renamed columns
 tua_outcome #print
 ```
+
+Calculate Cohen's kappa for two coders.
+?kappa2
+```{r}
+kappa2(tua_outcome[,c(1,2)], "unweighted")
+```
+
