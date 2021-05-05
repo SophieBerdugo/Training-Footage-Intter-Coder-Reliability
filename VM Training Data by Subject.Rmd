@@ -1,0 +1,88 @@
+---
+title: "VM Training Bouts by Subject"
+author: "Sophie Berdugo"
+date: "05/05/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Video UID: 8cd3b20b-f527-4092-907c-0311c8f3cfa6
+### Video Data and Time: 2010-01-03 | 08:05:33
+
+#### Tua
+
+**Import Data**
+Load tidyverse library to use the tidyverse package.
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+**Import CSV file**
+Import csv file of training data from location on machine. Data frame assigned to a variable called 'training'.
+
+``` {r message=FALSE, warning=FALSE}
+vm_tua <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_training_tua.csv')
+vm_tua
+```
+
+**Change Column Names**
+
+``` {r message=FALSE, warning=FALSE}
+vm_tua <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_training_tua.csv', col_names = names) #Add the vector 'names' to the tibble and reimport the csv file with the col_names changed
+vm_tua <- read_csv('~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_training_tua.csv', col_names = names, skip = 1) #Remove the original column names by using the skip function
+glimpse(vm_tua)
+```
+
+**Remove columns**
+Use dplyr to remove multiple columns which are not included in the analysis.
+
+``` {r message=FALSE, warning=FALSE}
+select(vm_tua, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategory, BehaviourType, CommentStart, CommentStop))
+vm_tua <- select(vm_tua, -c(Description, MediaFile, TotalLength, FPS, BehaviouralCategory, BehaviourType, CommentStart, CommentStop))
+glimpse(vm_tua)
+```
+
+**Create a new column to number the bouts**
+
+```{r}
+j = 0 #create a new counting variable
+vm_tua$bout.nr = 0 #create a new empty column
+for(i in 1:nrow(vm_tua)){ #loop over all rows
+  if(vm_tua$Behaviour[i] == 'Start Bout'){ #if the row says 'Start Bout', the bout counter is updated by 1
+    j = j+1
+  }
+  vm_tua$bout.nr[i] = j #give the row the bout number
+}
+```
+
+**Get the Modifier information for each bout**
+
+```{r}
+bout.info = lapply(unique(vm_tua$bout.nr), function(x){
+  print(x)
+  set.data = subset(vm_tua, bout.nr == x) #select only the bout in question
+  bout.info = unlist(
+    strsplit(
+      set.data$Modifiers[set.data$Behaviour == 'End Bout'],
+      split = '|',
+      fixed = T)) #This takes apart the information in the End Bout Modifier
+  x.bout = data.frame(
+    bout.nr = x,
+    CompleteBout = bout.info[1], #Assign a name to each Modifier into a new column
+    Strikes = bout.info[2],
+    Outcome = bout.info[3],
+    Learner = bout.info[4],
+    MaternalModel = bout.info[5],
+    LearnerName = bout.info[6],
+    ModelTolerance = bout.info[7],
+    ModelIntolerance = bout.info[8]
+  )
+  return(x.bout) #Puts out that data frame
+})
+bout.info = do.call(rbind, bout.info) #Turns the list for all the bouts inot a data frame again
+```
+
