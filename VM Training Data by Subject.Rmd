@@ -199,3 +199,32 @@ Calculate Cohen's kappa for two coders.
 kappa2(tua_outcome[,c(1,2)], "unweighted")
 ```
 
+### Number of strikes
+
+The variable *Strikes* records the number of strikes performed by the focal individual on a nut in the whole nut-cracking bout. This is an exact number that is manually inputted by the coder. 
+
+This data is ratio, and so intraclass correlations (ICC) will be used to establish the reliability between two independent coders. In accordance with Koo & Li's (2016) guidelines on ICC model selection, the method used here will be a two-way, mixed-effects, single rater absolute agreement ICC.
+
+**Combine the strikes columns for Tua data**
+```{r}
+sb_tua_strikes <- select(sb_tua_info, Strikes) #select the column for strikes from SB data frame
+vm_tua_strikes <- select(vm_tua_info, Strikes) #select the column for strikes from SB data frame
+tua_strikes <- bind_cols(sb_tua_strikes, vm_tua_strikes) #combine two columns to get tua strikes SB and VM side-by-side
+tua_strikes <- tua_strikes %>%
+  rename(
+    SB = Strikes...1,
+    VM = Strikes...2
+  ) #rename the two columns and override original data frame of tua_outcome to include renamed columns
+tua_strikes #print
+```
+
+Calculate ICC for two coders
+```{r}
+icc(tua_strikes, #data frame
+    model = "twoway", #two-way model selected as the selected raters are the only raters of interest (Koo & Li, 2016)
+    type = "agreement", #absolute agreement between the raters to be calculated
+    unit = "single", #measurement from a single rater as the basis of the actual measurement
+    r0 = 0, #specification of the null hypothesis
+    conf.level = 0.95) #confidence level
+```
+
