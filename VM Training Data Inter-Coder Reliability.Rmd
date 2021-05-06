@@ -1,0 +1,53 @@
+---
+title: "VM Training Footage Inter-Coder Reliability"
+author: "Sophie Berdugo"
+date: "06/05/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Video UID: 8cd3b20b-f527-4092-907c-0311c8f3cfa6
+### Video Data and Time: 2010-01-03 | 08:05:33
+
+**Rater 1: Sophie Berdugo**
+**Rater 2: Victoire Martignac**
+
+Load libraries for analysis
+```{r message=FALSE, warning=FALSE}
+library(tidyverse) #Load tidyverse to use the tidyverse package
+library(irr) #Load the irr package to retrieve packages relating to inter-rater reliability.
+```
+
+Import data frames from csv files.
+```{r message=FALSE, warning=FALSE}
+sb_training <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/SB_Clean.csv") #read csv file for SB clean training data
+sb_training <- slice(sb_training, 1:58) #create new data frame of subset of first 58 rows
+vm_training <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/VM_Clean.csv") #read csv file for VM clean training data
+sb_training #print
+vm_training
+```
+
+# Variables
+This analysis involves establishing the levels of inter-rater reliability for various variables relating to adult nut-cracking efficiency and model investment. These variables are:
+
+* Bout outcome
+* Strikes per nut
+* Displacement rate
+* Tool switch rate
+* Bout duration
+
+The inter-rater reliability analysis utilised depends on the level of measurement of each variable under investigation. The levels of measurement and corresponding test of inter rater reliability for each variable can be found in Table 1, below:
+
+*Table 1*
+
+| Variable                | Level of Measurement | Approach                           |
+| :---------------------- | :------------------- | :--------------------------------- |
+| Bout outcome            | Nominal              | Cohen's kappa                      |
+| Strikes per nut         | Ratio                | Intraclass correlation coefficient |
+| Displacement rate       | Ratio                | Intraclass correlation coefficient |
+| Tool switch rate        | Ratio                | Intraclass correlation coefficient |
+| Bout duration           | Ratio                | Intraclass correlation coefficient |
