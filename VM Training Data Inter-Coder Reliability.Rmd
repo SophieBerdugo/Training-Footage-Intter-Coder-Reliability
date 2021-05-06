@@ -66,7 +66,7 @@ Create data frame of bout outcome ready for Cohen's kappa calculation
 ```{r}
 sb_outcome <- select(sb_training, "Bout Outcome") #select the column for bout outcome from sb data frame
 vm_outcome <- select(vm_training, "Bout Outcome") #select the column for bout outcome from vm data frame
-bout_outcome <- bind_cols(sb_outcome, vm_outcome) #comvine these two columns
+bout_outcome <- bind_cols(sb_outcome, vm_outcome) #combine these two columns
 bout_outcome <- bout_outcome %>%
   rename(
     SB = "Bout Outcome...1",
@@ -81,4 +81,34 @@ Calculate Cohen's kappa for two coders.
 kappa2(bout_outcome[,c(1,2)], "unweighted")
 ```
 **The agreement between the two raters was moderate, κ = 0.502, and greater than would be expected by chance,** ***Z*** **= 3.93,** ***p*** **< .05**
+
+### Number of strikes
+
+The variable *number of strikes* records the number of strikes performed by the focal individual on a nut in the whole nut-cracking bout. This is an exact number that is manually inputted by the coder. 
+
+This data is ratio, and so intraclass correlations (ICC) will be used to establish the reliability between two independent coders. In accordance with Koo & Li's (2016) guidelines on ICC model selection, the method used here will be a two-way, mixed-effects, single rater absolute agreement ICC.
+
+Create data frame of bout outcome ready for Cohen's kappa calculation
+```{r}
+sb_strikes <- select(sb_training, "Number of Strikes") #select the column for number of strikes from sb data frame
+vm_strikes <- select(vm_training, "Number of Stikes") #select the column for number of strikes from vm data frame
+strikes <- bind_cols(sb_strikes, vm_strikes) #combine these two columns
+strikes <- strikes %>%
+  rename(
+    SB = "Number of Strikes",
+    VM = "Number of Stikes"
+  ) #rename the two columns and override original data frame of bout_outcome to include renamed columns
+strikes #print
+```
+
+Calculate ICC for two coders
+```{r}
+icc(strikes, #data frame
+    model = "twoway", #two-way model selected as the selected raters are the only raters of interest (Koo & Li, 2016)
+    type = "agreement", #absolute agreement between the raters to be calculated
+    unit = "single", #measurement from a single rater as the basis of the actual measurement
+    r0 = 0, #specification of the null hypothesis
+    conf.level = 0.95) #confidence level
+```
+**ICC estimates and their 95% confidence intervals were calculated using R (v. 4.0.3) based on a single rater (k = 2), absolute-agreement, two-way mixed effects model. The ICC score indicated excellent reliability.** 
 
