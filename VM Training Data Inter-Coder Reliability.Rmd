@@ -51,3 +51,34 @@ The inter-rater reliability analysis utilised depends on the level of measuremen
 | Displacement rate       | Ratio                | Intraclass correlation coefficient |
 | Tool switch rate        | Ratio                | Intraclass correlation coefficient |
 | Bout duration           | Ratio                | Intraclass correlation coefficient |
+
+### Bout outcome
+
+The three potential bout outcomes are:
+
+1. *Successful* - The nut is cracked open using the hammer and anvil composite and the full kernel is retrieved and eaten by an individual (not necessarily by focal subject, if kernel is scrounged). 
+2. *Smash* - The nut is cracked open using hammer and anvil, but the kernel is smashed into multiple pieces and each piece is eaten separately.
+3. *Failed* - A different nut is placed on the anvil following displacement of the original nut; or, the nut is not retrieved or not eaten by any individual. 
+
+This data is nominal so an unweighted Cohen's kappa will be used to establish the concordance between two independent observers. 
+
+Create data frame of bout outcome ready for Cohen's kappa calculation
+```{r}
+sb_outcome <- select(sb_training, "Bout Outcome") #select the column for bout outcome from sb data frame
+vm_outcome <- select(vm_training, "Bout Outcome") #select the column for bout outcome from vm data frame
+bout_outcome <- bind_cols(sb_outcome, vm_outcome) #comvine these two columns
+bout_outcome <- bout_outcome %>%
+  rename(
+    SB = "Bout Outcome...1",
+    VM = "Bout Outcome...2"
+  ) #rename the two columns and override original data frame of bout_outcome to include renamed columns
+bout_outcome #print
+```
+
+Calculate Cohen's kappa for two coders.
+
+```{r}
+kappa2(bout_outcome[,c(1,2)], "unweighted")
+```
+**The agreement between the two raters was moderate, κ = 0.502, and greater than would be expected by chance,** ***Z*** **= 3.93,** ***p*** **< .05**
+
