@@ -97,7 +97,7 @@ strikes <- strikes %>%
   rename(
     SB = "Number of Strikes",
     VM = "Number of Stikes"
-  ) #rename the two columns and override original data frame of bout_outcome to include renamed columns
+  ) #rename the two columns and override original data frame of strikes to include renamed columns
 strikes #print
 ```
 
@@ -112,3 +112,30 @@ icc(strikes, #data frame
 ```
 **ICC estimates and their 95% confidence intervals were calculated using R (v. 4.0.3) based on a single rater (k = 2), absolute-agreement, two-way mixed effects model. The ICC score indicated excellent reliability.** 
 
+### Displacement rate
+
+The variable *displacement rate* indicates the number of times a nut is hit off the anvil before the kernel is retrieved. This data is ratio, and so intraclass correlations (ICC) will be used to establish the reliability between two independent coders. In accordance with Koo & Li's (2016) guidelines on ICC model selection, the method used here will be a two-way, mixed-effects, single rater absolute agreement ICC.
+
+Create data frame of bout outcome ready for Cohen's kappa calculation
+```{r}
+sb_displacement <- select(sb_training, "Displacement rate") #select the column for displacement rate from sb data frame
+vm_displacement <- select(vm_training, "Displacement rate") #select the column for displacement rate from vm data frame
+displacement <- bind_cols(sb_displacement, vm_displacement) #combine these two columns
+displacement <- displacement %>%
+  rename(
+    SB = "Displacement rate...1",
+    VM = "Displacement rate...2"
+  ) #rename the two columns and override original data frame of displacement to include renamed columns
+displacement #print
+```
+
+Calculate ICC for two coders
+```{r}
+icc(displacement, #data frame
+    model = "twoway", #two-way model selected as the selected raters are the only raters of interest (Koo & Li, 2016)
+    type = "agreement", #absolute agreement between the raters to be calculated
+    unit = "single", #measurement from a single rater as the basis of the actual measurement
+    r0 = 0, #specification of the null hypothesis
+    conf.level = 0.95) #confidence level
+```
+**ICC estimates and their 95% confidence intervals were calculated using R (v. 4.0.3) based on a single rater (k = 2), absolute-agreement, two-way mixed effects model. The ICC score indicated moderate reliability.** 
