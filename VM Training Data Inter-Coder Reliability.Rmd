@@ -82,6 +82,19 @@ kappa2(bout_outcome[,c(1,2)], "unweighted")
 ```
 **The agreement between the two raters was moderate, κ = 0.502, and greater than would be expected by chance,** ***Z*** **= 3.93,** ***p*** **< .05**
 
+### Bout outcome following consultation between coders and clarification of coding scheme
+
+```{r}
+sb_vm_outcome_2 <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/SB_VM_outcome_retrained.csv")
+sb_vm_outcome_2
+```
+Calculate Cohen's kappa for two coders.
+
+```{r}
+kappa2(sb_vm_outcome_2[,c(1,2)], "unweighted")
+```
+**The agreement between the two raters was almost perfect, κ = 0.937, and greater than would be expected by chance,** ***Z*** **= 7.55,** ***p*** **< .05**
+
 ### Number of strikes
 
 The variable *number of strikes* records the number of strikes performed by the focal individual on a nut in the whole nut-cracking bout. This is an exact number that is manually inputted by the coder. 
