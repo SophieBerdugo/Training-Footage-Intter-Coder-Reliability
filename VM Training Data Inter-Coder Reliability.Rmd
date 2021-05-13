@@ -237,3 +237,15 @@ icc(duration, #data frame
 
 **Rater 1: Sophie Berdugo**
 **Rater 2: Victoire Martignac**
+
+**Variables**
+This analysis involves establishing the levels of inter-rater reliability for various variables relating to model investment. These variables are:
+
+* Learner
+* Maternal model
+* Learner name
+* Model tolerance
+* Model intolerance
+
+All of these variables are nominal level data so Cohen's κ will be calculated to establish the inter-rater reliability.
+
