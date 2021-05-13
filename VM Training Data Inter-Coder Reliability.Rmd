@@ -229,7 +229,6 @@ icc(duration, #data frame
 ```
 **ICC estimates and their 95% confidence intervals were calculated using R (v. 4.0.3) based on a single rater (k = 2), consistency, two-way mixed effects model. The ICC score indicated excellent reliability.** 
 
-
 ## Model Investment Variables
 
 ### Video UID: 31e021b5-8ab6-450f-b5ef-73e2975b50d4
@@ -247,5 +246,16 @@ This analysis involves establishing the levels of inter-rater reliability for va
 * Model tolerance
 * Model intolerance
 
-All of these variables are nominal level data so Cohen's κ will be calculated to establish the inter-rater reliability.
+All of these variables are nominal level data so unweighted Cohen's κ will be used to establish the concordance between two independent observers. 
+
+### Learner
+
+The *learner* variable describes whether or not there was a conspecific who was present during the focal individual's nut-cracking bout. The three options for coding were:
+
+1. *Watching* - There is a learner watching the focal subject during the nut-cracking bout, whereby the learner’s face is oriented toward the model’s hand or arm during the bout.
+2. *Interacting* - There is a learner present, and they are interacting with the focal subject (for example, touching arm or body of model, climbing on model).
+3. *Clinging* - -	There is a learner present, and they are clinging to the focal subject or sat on the focal subject’s lap and not watching the nut-cracking bout. 
+4. *Clinging and watching* - -	There is a learner present, and they are clinging to the focal subject or sat on the focal subject’s lap and watching the nut-cracking bout. 
+5. *Present* - -	There is a learner present, ≤ 1 metre (m) away from the focal subject during the bout, but they are not watching the bout or interacting with the model. 
+6. *Solo* - There is no learner with the focal individual during their nut-cracking bout.
 
