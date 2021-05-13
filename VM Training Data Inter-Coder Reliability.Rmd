@@ -259,3 +259,33 @@ The *learner* variable describes whether or not there was a conspecific who was 
 5. *Present* - -	There is a learner present, ≤ 1 metre (m) away from the focal subject during the bout, but they are not watching the bout or interacting with the model. 
 6. *Solo* - There is no learner with the focal individual during their nut-cracking bout.
 
+### Maternal model
+
+The *maternal model* variable describes whether the model is the learner's mother or not. The three options for coding are:
+
+1. *Yes*
+2. *No*
+3. *None* - recorded if no learner was present
+
+### Learner name
+
+The *learner name* variable records the name of the learner if one is present in the bout. The coding options for the variable are the names 'None' is recorded if no learner was present.
+
+### Model tolerance
+
+The variable *model tolerance* is a record of whether the focal subject permitted any of the following learner behaviours during their nut-cracking bout:
+
+1. *None* - No learner attempted to scrounge the kernel, interact with the model or the model’s tools or be proximate to the model during the nut-cracking bout.
+2. *Scrounge* -	The focal chimpanzee permitted the learner to take the extracted kernel to eat themselves.
+3. *Tool interaction* -	The focal chimpanzee permitted the learner to touch either one or both stones in the tool composite during the nut-cracking bout.
+4. *Model interaction* - The focal chimpanzee permitted the learner to interact with them (for example, touching arm or body of model, climbing on model) during their nut-cracking bout.
+5. *Tool re-use* - The focal chimpanzee permitted the learner to re-use one or both of their tool composite tools after their nut-cracking bout. 
+6. *Proximity* - The focal chimpanzee permitted the learner to be ≤ 1 metre (m) away from them during the bout. In this case, the learner was not interacting with the focal subject, but was merely close to the focal subject and watching the nut-cracking bout.
+
+### Model intolerance
+
+The variable *model intolerance* is a record of whether the focal subject expressed intolerance toward a learner. The possible behaviours are:
+
+1. *None* -	The focal subject did not express intolerance toward a learner during the bout.
+2. *Physical* -	The focal subject physically rejected a learner’s attempts to scrounge, interact with the model or the tools, or be proximate whilst they were nut-cracking (for example, shoving, hitting, or chasing the learner).
+3. *Vocal* -	The focal subject vocally rejected a learner’s attempts to scrounge, interact with the model or the tools, or be proximate whilst they are nut-cracking (for example, grunting, barking or screaming). Barking sounds like ‘waa’, ‘waaoo’ or ‘aaoo’, and are shorter than screams (Crockford & Boesch, 2003, p. 117).
