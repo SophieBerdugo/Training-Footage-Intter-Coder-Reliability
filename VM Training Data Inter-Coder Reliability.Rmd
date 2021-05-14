@@ -370,4 +370,20 @@ The variable *model intolerance* is a record of whether the focal subject expres
 2. *Physical* -	The focal subject physically rejected a learner’s attempts to scrounge, interact with the model or the tools, or be proximate whilst they were nut-cracking (for example, shoving, hitting, or chasing the learner).
 3. *Vocal* -	The focal subject vocally rejected a learner’s attempts to scrounge, interact with the model or the tools, or be proximate whilst they are nut-cracking (for example, grunting, barking or screaming). Barking sounds like ‘waa’, ‘waaoo’ or ‘aaoo’, and are shorter than screams (Crockford & Boesch, 2003, p. 117).
 
-There were no instances of 
+Create data frame of model intolerance ready for Cohen's kappa calculation
+```{r}
+sb_model_intolerance <- select(sb_investment, "Model intolerance") #select the column for model intolerance from sb data frame
+vm_model_intolerance <- select(vm_investment, "Model intolerance") #select the column for model intolerance from vm data frame
+sb_vm_model_intolerance <- bind_cols(sb_model_intolerance, vm_model_intolerance) #combine these two columns
+sb_vm_model_intolerance <- sb_vm_model_intolerance %>%
+  rename(
+    SB = "Model intolerance...1",
+    VM = "Model intolerance...2"
+  ) #rename the two columns and override original data frame of model tolerance to include renamed columns
+sb_vm_model_intolerance #print
+```
+
+Calculate Cohen's kappa for two coders.
+```{r}
+kappa2(sb_vm_model_intolerance[,c(1,2)], "unweighted")
+```
