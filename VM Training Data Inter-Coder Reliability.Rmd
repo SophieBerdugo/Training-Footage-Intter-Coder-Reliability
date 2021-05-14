@@ -379,6 +379,8 @@ Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(sb_vm_model_tolerance[,c(1,2)], "unweighted")
 ```
+**The agreement between the two raters was almost perfect, κ = 0.82, and greater than would be expected by chance,** ***Z*** **= 8.98,** ***p*** **< .05**
+
 
 ### Model tolerance following consultation between coders and clarification of coding scheme
 
@@ -387,6 +389,8 @@ sb_vm_model_tolerance_2 <- read_csv("~/Documents/Oxford/DPhil/Project Components
 sb_vm_model_tolerance_2 #print
 kappa2(sb_vm_model_tolerance_2[,c(1,2)], "unweighted")
 ```
+
+**The agreement between the two raters was almost perfect, κ = 0.974, and greater than would be expected by chance,** ***Z*** **= 10.6,** ***p*** **< .05**
 
 ### Model intolerance
 
