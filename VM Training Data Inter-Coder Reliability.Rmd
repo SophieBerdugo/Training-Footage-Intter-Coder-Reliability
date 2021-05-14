@@ -102,7 +102,7 @@ The variable *number of strikes* records the number of strikes performed by the 
 
 This data is ratio, and so intraclass correlations (ICC) will be used to establish the reliability between two independent coders. In accordance with Koo & Li's (2016) guidelines on ICC model selection, the method used here will be a two-way, mixed-effects, single rater absolute agreement ICC.
 
-Create data frame of bout outcome ready for Cohen's kappa calculation
+Create data frame of number of strikes ready for Cohen's kappa calculation
 ```{r}
 sb_strikes <- select(sb_training, "Number of Strikes") #select the column for number of strikes from sb data frame
 vm_strikes <- select(vm_training, "Number of Stikes") #select the column for number of strikes from vm data frame
@@ -130,7 +130,7 @@ icc(strikes, #data frame
 
 The variable *displacement rate* indicates the number of times a nut is hit off the anvil before the kernel is retrieved. This data is ratio, and so intraclass correlations (ICC) will be used to establish the reliability between two independent coders. In accordance with Koo & Li's (2016) guidelines on ICC model selection, the method used here will be a two-way, mixed-effects, single rater absolute agreement ICC.
 
-Create data frame of bout outcome ready for Cohen's kappa calculation
+Create data frame of displacement rate ready for Cohen's kappa calculation
 ```{r}
 sb_displacement <- select(sb_training, "Displacement rate") #select the column for displacement rate from sb data frame
 vm_displacement <- select(vm_training, "Displacement rate") #select the column for displacement rate from vm data frame
@@ -177,7 +177,7 @@ icc(sb_vm_displacement_2, #data frame
 
 The variable *tool switch rate* indicates the number of times a nut is hit off the anvil before the kernel is retrieved. This data is ratio, and so intraclass correlations (ICC) will be used to establish the reliability between two independent coders. In accordance with Koo & Li's (2016) guidelines on ICC model selection, the method used here will be a two-way, mixed-effects, single rater absolute agreement ICC.
 
-Create data frame of bout outcome ready for Cohen's kappa calculation
+Create data frame of tool switch ready for ICC calculation
 ```{r}
 sb_tool_switch <- select(sb_training, "Tool switch rate") #select the column for tool switch rate from sb data frame
 vm_tool_switch <- select(vm_training, "Tool switch rate") #select the column for tool switch rate from vm data frame
@@ -205,7 +205,7 @@ icc(tool_switch, #data frame
 
 The variable **bout duration** indicates the length in seconds that the individual was continuously striking a nut with a hammer and anvil composite before the nut was either retrieved or was not retreived. This data is ratio, and so intraclass correlations (ICC) will be used to establish the reliability between two independent coders. In accordance with Koo & Li's (2016) guidelines on ICC model selection, the method used here will be a two-way, mixed-effects, single rater, consistency ICC.
 
-Create data frame of bout outcome ready for Cohen's kappa calculation
+Create data frame of bout duration ready for ICC calculation
 ```{r}
 sb_duration <- select(sb_training, "Bout Duration") #select the column for bout duration from sb data frame
 vm_duration <- select(vm_training, "Bout Duration") #select the column for bout duration from vm data frame
@@ -248,8 +248,6 @@ This analysis involves establishing the levels of inter-rater reliability for va
 
 All of these variables are nominal level data so unweighted Cohen's κ will be used to establish the concordance between two independent observers. 
 
-### Learner
-
 Import data frames from csv files
 ```{r}
 sb_investment <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/Clean data/Model Investment/SB_model_investment_training.csv") #read csv file for SB clean model investment data
@@ -257,6 +255,8 @@ vm_investment <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Cod
 sb_investment  #print
 vm_investment 
 ```
+
+### Learner
 
 The *learner* variable describes whether or not there was a conspecific who was present during the focal individual's nut-cracking bout. The three options for coding were:
 
@@ -266,6 +266,24 @@ The *learner* variable describes whether or not there was a conspecific who was 
 4. *Clinging and watching* - There is a learner present, and they are clinging to the focal subject or sat on the focal subject’s lap and watching the nut-cracking bout. 
 5. *Present* - There is a learner present, ≤ 1 metre (m) away from the focal subject during the bout, but they are not watching the bout or interacting with the model. 
 6. *Solo* - There is no learner with the focal individual during their nut-cracking bout.
+
+Create data frame of learner ready for Cohen's kappa calculation
+```{r}
+sb_learner <- select(sb_investment, "Learner") #select the column for learner from sb data frame
+vm_learner <- select(vm_investment, "Learner") #select the column for learner from vm data frame
+sb_vm_learner <- bind_cols(sb_learner, vm_learner) #combine these two columns
+sb_vm_learner <- sb_vm_learner %>%
+  rename(
+    SB = "Learner...1",
+    VM = "Learner...2"
+  ) #rename the two columns and override original data frame of learner to include renamed columns
+sb_vm_learner #print
+```
+Calculate Cohen's kappa for two coders.
+
+```{r}
+kappa2(sb_vm_learner[,c(1,2)], "unweighted")
+```
 
 ### Maternal model
 
