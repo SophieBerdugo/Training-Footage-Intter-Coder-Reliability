@@ -250,8 +250,8 @@ All of these variables are nominal level data so unweighted Cohen's κ will be u
 
 Import data frames from csv files
 ```{r}
-sb_investment <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/Clean data/Model Investment/SB_model_investment_training.csv") #read csv file for SB clean model investment data
-vm_investment <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/Clean data/Model Investment/VM_model_investment_training.csv") #read csv file for VM clean model investment data
+sb_investment <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/Clean data/Model Investment/Original/SB_model_investment_training.csv") #read csv file for SB clean model investment data
+vm_investment <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/Clean data/Model Investment/Original/VM_model_investment_training.csv") #read csv file for VM clean model investment data
 sb_investment  #print
 vm_investment 
 ```
