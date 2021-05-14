@@ -284,6 +284,7 @@ Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(sb_vm_learner[,c(1,2)], "unweighted")
 ```
+**The agreement between the two raters was substantial, κ = 0.693, and greater than would be expected by chance,** ***Z*** **= 8.67,** ***p*** **< .05**
 
 ### Learner following consultation between coders and clarification of coding scheme
 
@@ -292,6 +293,7 @@ sb_vm_learner_2 <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-C
 sb_vm_learner_2 #print
 kappa2(sb_vm_learner_2[,c(1,2)], "unweighted")
 ```
+**The agreement between the two raters was almost perfect, κ = 0892, and greater than would be expected by chance,** ***Z*** **= 11.1,** ***p*** **< .05**
 
 ### Maternal model
 
@@ -347,6 +349,7 @@ Calculate Cohen's kappa for two coders.
 ```{r}
 kappa2(sb_vm_learner_name[,c(1,2)], "unweighted")
 ```
+**The agreement between the two raters was almost perfect, κ = 0.894, and greater than would be expected by chance,** ***Z*** **= 7.89,** ***p*** **< .05**
 
 ### Model tolerance
 
@@ -382,11 +385,6 @@ kappa2(sb_vm_model_tolerance[,c(1,2)], "unweighted")
 ```{r}
 sb_vm_model_tolerance_2 <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Victoire Martignac/Training Data/Clean data/Model Investment/Following Discrepency Meeting/Model tolerance.csv") #read csv file for clean model tolerance data
 sb_vm_model_tolerance_2 #print
-kappa2(sb_vm_model_tolerance_2[,c(1,2)], "unweighted")
-```
-
-Calculate Cohen's kappa for two coders.
-```{r}
 kappa2(sb_vm_model_tolerance_2[,c(1,2)], "unweighted")
 ```
 
