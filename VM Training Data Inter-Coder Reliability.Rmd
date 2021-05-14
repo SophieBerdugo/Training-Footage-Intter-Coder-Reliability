@@ -293,9 +293,45 @@ The *maternal model* variable describes whether the model is the learner's mothe
 2. *No*
 3. *None* - recorded if no learner was present
 
+Create data frame of maternal model ready for Cohen's kappa calculation
+```{r}
+sb_maternal_model <- select(sb_investment, "Maternal Model") #select the column for maternal model from sb data frame
+vm_maternal_model <- select(vm_investment, "Maternal model") #select the column for maternal model from vm data frame
+sb_vm_maternal_model <- bind_cols(sb_maternal_model, vm_maternal_model) #combine these two columns
+sb_vm_maternal_model <- sb_vm_maternal_model %>%
+  rename(
+    SB = "Maternal Model",
+    VM = "Maternal model"
+  ) #rename the two columns and override original data frame of maternal model to include renamed columns
+sb_vm_maternal_model #print
+```
+Calculate Cohen's kappa for two coders.
+
+```{r}
+kappa2(sb_vm_maternal_model[,c(1,2)], "unweighted")
+```
+
 ### Learner name
 
 The *learner name* variable records the name of the learner if one is present in the bout. The coding options for the variable are the names 'None' is recorded if no learner was present.
+
+Create data frame of learner name ready for Cohen's kappa calculation
+```{r}
+sb_learner_name <- select(sb_investment, "Learner name") #select the column for learner name from sb data frame
+vm_learner_name <- select(vm_investment, "Learner name") #select the column for learner name from vm data frame
+sb_vm_learner_name <- bind_cols(sb_learner_name, vm_learner_name) #combine these two columns
+sb_vm_learner_name <- sb_vm_learner_name %>%
+  rename(
+    SB = "Learner name...1",
+    VM = "Learner name...2"
+  ) #rename the two columns and override original data frame of learner name to include renamed columns
+sb_vm_learner_name #print
+```
+
+Calculate Cohen's kappa for two coders.
+```{r}
+kappa2(sb_vm_learner_name[,c(1,2)], "unweighted")
+```
 
 ### Model tolerance
 
