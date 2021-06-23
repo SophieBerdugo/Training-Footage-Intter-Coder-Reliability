@@ -9,3 +9,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# Development Variables
+
+### Video UID: a9f7d6e1-f513-4c49-beaa-65656d7486ff
+### Video Data and Time: 2003-12-15 | 17:19:13
+
+**Rater 1: Sophie Berdugo**
+**Rater 2: Alejandro Diaz-Cavieres**
