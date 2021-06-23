@@ -16,3 +16,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **Rater 1: Sophie Berdugo**
 **Rater 2: Alejandro Diaz-Cavieres**
+
+Load libraries for analysis
+```{r message=FALSE, warning=FALSE}
+library(tidyverse) #Load tidyverse to use the tidyverse package
+library(irr) #Load the irr package to retrieve packages relating to inter-rater reliability.
+```
