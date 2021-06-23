@@ -22,3 +22,29 @@ Load libraries for analysis
 library(tidyverse) #Load tidyverse to use the tidyverse package
 library(irr) #Load the irr package to retrieve packages relating to inter-rater reliability.
 ```
+
+# Variables
+This analysis involves establishing the levels of inter-rater reliability for various variables relating to  nut-cracking development and model selection. These variables are:
+
+* Bout duration
+* Bout outcome
+* Strikes per nut
+* Peering duration
+* Behavioural episode class
+* Behavioural episode object(s)
+* Behavioural episode fundamental action(s)
+
+The inter-rater reliability analysis utilised depends on the level of measurement of each variable under investigation. The levels of measurement and corresponding test of inter rater reliability for each variable can be found in Table 1, below:
+
+*Table 1*
+
+| Variable                                  | Level of Measurement | Approach                           |
+| :---------------------------------------- | :------------------- | :--------------------------------- |
+| Bout duration                             | Ratio                | Intraclass correlation coefficient |
+| Bout outcome                              | Nominal              | Cohen's kappa                      |
+| Strikes per nut                           | Ratio                | Intraclass correlation coefficient |
+| Peering duration                          | Ratio                | Intraclass correlation coefficient |
+| Behavioural episode class                 | Nominal              | Cohen's kappa                      |
+| Behavioural episode object(s)             | Nominal              | Cohen's kappa                      |
+| Behavioural episode fundamental action(s) | Nominal              | Cohen's kappa                      |
+
