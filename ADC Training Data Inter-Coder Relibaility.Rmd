@@ -97,3 +97,22 @@ sb_adc_bout_outcome
 kappa2(sb_adc_bout_outcome[,c(1,2)], "unweighted")
 ```
 
+## Behavioural episode duration
+
+Import data from csv file
+
+```{r}
+sb_adc_behavioural_episode_duration <- read_csv(("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Alejandro Diaz-Cavieres/Training/Clean Data/Behavioural episode duration.csv"))
+sb_adc_behavioural_episode_duration
+```
+
+Calculate ICC for two coders
+```{r}
+icc(sb_adc_behavioural_episode_duration, #data frame
+    model = "twoway", #two-way model selected as the selected raters are the only raters of interest (Koo & Li, 2016)
+    type = "consistency", #consistency between the raters to be calculated
+    unit = "single", #measurement from a single rater as the basis of the actual measurement
+    r0 = 0, #specification of the null hypothesis
+    conf.level = 0.95) #confidence level
+```
+
