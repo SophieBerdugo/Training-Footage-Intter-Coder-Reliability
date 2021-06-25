@@ -66,4 +66,19 @@ icc(sb_adc_bout_duration, #data frame
 ```
 **ICC estimates and their 95% confidence intervals were calculated using R (v. 4.0.3) based on a single rater (k = 2), consistency, two-way mixed effects model. The ICC score indicated excellent reliability.** 
 
+## Number of strikes
 
+Import data frame from csv file
+```{r}
+sb_adc_strikes <- read_csv(("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Alejandro Diaz-Cavieres/Training/Clean Data/Number of strikes.csv"))
+sb_adc_strikes
+```
+Calculate ICC for two coders
+```{r}
+icc(sb_adc_strikes, #data frame
+    model = "twoway", #two-way model selected as the selected raters are the only raters of interest (Koo & Li, 2016)
+    type = "agreement", #absolute agreement between the raters to be calculated
+    unit = "single", #measurement from a single rater as the basis of the actual measurement
+    r0 = 0, #specification of the null hypothesis
+    conf.level = 0.95) #confidence level
+```
