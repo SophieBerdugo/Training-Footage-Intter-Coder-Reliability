@@ -209,3 +209,15 @@ icc(retrained_sb_adc_behavioural_episode_duration, #data frame
     r0 = 0, #specification of the null hypothesis
     conf.level = 0.95) #confidence level
 ```
+
+## Behavioural Episode Class
+
+```{r}
+retrained_sb_adc_behavioural_episode_class <- read_csv(("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Alejandro Diaz-Cavieres/Training/Clean Data/Retrained/Behavioural episode class.csv"))
+retrained_sb_adc_behavioural_episode_class
+```
+
+Calculate Cohen's kappa
+```{r}
+kappa2(retrained_sb_adc_behavioural_episode_class[,c(1,2)], "unweighted")
+```
