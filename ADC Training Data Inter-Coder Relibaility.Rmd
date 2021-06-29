@@ -233,3 +233,15 @@ Calculate Cohen's kappa
 ```{r}
 kappa2(retrained_sb_adc_behavioural_episode_objects[,c(1,2)], "unweighted")
 ```
+
+## Behavioural Episode Actions
+
+```{r}
+retrained_sb_adc_behavioural_episode_actions <- read_csv(("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Alejandro Diaz-Cavieres/Training/Clean Data/Retrained/Behavioural episode actions.csv"))
+retrained_sb_adc_behavioural_episode_actions
+```
+
+Calculate Cohen's kappa
+```{r}
+kappa2(retrained_sb_adc_behavioural_episode_actions[,c(1,2)], "unweighted")
+```
