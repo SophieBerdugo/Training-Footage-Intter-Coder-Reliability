@@ -191,3 +191,21 @@ icc(retrained_sb_adc_peering_duration, #data frame
     r0 = 0, #specification of the null hypothesis
     conf.level = 0.95) #confidence level
 ```
+
+# Behavioural Episode Duration
+
+Import data frames from csv files.
+```{r}
+retrained_sb_adc_behavioural_episode_duration <- read_csv("~/Documents/Oxford/DPhil/Project Components/Inter-Coder Reliability/Data/Alejandro Diaz-Cavieres/Training/Clean Data/Retrained/Behavioural episode duration.csv")
+retrained_sb_adc_behavioural_episode_duration
+```
+
+Calculate ICC for two coders
+```{r}
+icc(retrained_sb_adc_behavioural_episode_duration, #data frame
+    model = "twoway", #two-way model selected as the selected raters are the only raters of interest (Koo & Li, 2016)
+    type = "consistency", #consistency between the raters to be calculated
+    unit = "single", #measurement from a single rater as the basis of the actual measurement
+    r0 = 0, #specification of the null hypothesis
+    conf.level = 0.95) #confidence level
+```
